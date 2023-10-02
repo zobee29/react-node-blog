@@ -5,8 +5,12 @@ import "./App.css";
 function App() {
   const [data, setData] = useState(null);
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+  console.log(apiUrl)
+
   useEffect(() => {
-    fetch("/api")
+    fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
