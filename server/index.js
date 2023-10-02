@@ -9,6 +9,6 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-app.listen(() => {
-  console.log(`APP LISTENING ON PORT ${process.env.PORT || 3000}`);
-});
+app.listen(config.PORT, config.HOST, () => {
+  console.log(`APP LISTENING ON http://${config.HOST}:${config.PORT}`);
+})
