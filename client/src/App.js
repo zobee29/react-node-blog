@@ -7,7 +7,7 @@ function App() {
 
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  console.log(apiUrl)
+  console.log('apiurl', apiUrl)
 
   useEffect(() => {
     fetch(apiUrl)
