@@ -1,14 +1,14 @@
+const config =  require('./config.js');
 const express = require("express");
-
-const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+console.log(`NODE_ENV=${config.NODE_ENV}`);
+
 app.get("/api", (req, res) => {
-  console.log("/api")
   res.json({ message: "Hello from server!" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+app.listen(() => {
+  console.log(`APP LISTENING ON PORT ${process.env.PORT || 3000}`);
 });
