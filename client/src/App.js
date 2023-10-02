@@ -7,10 +7,8 @@ function App() {
 
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  console.log('apiurl', apiUrl)
-
   useEffect(() => {
-    fetch(apiUrl)
+    fetch(`${apiUrl}/api`)
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
